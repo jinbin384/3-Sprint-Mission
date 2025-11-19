@@ -1,6 +1,6 @@
 import axios from "axios";
-import { logAndThrow } from "./util.js";
-import { ElectronicProduct, Product } from "./product.js";
+import { logAndThrow } from "./Util.js";
+import { ElectronicProduct, Product } from "./Product.js";
 
 // ## Product 요청 함수 구현하기
 
@@ -43,7 +43,7 @@ export async function getProduct(productId) {
 //         - request body에 `title`, `content`, `image` 를 포함해 주세요.
 export async function createProduct(product) {
   try {
-    const response = await axios.post(BASE_URL);
+    const response = await axios.post(BASE_URL, product);
     if (response.status !== 200) {
       throw new Error("response failed", { cause: response });
     }
@@ -56,7 +56,7 @@ export async function createProduct(product) {
 //     - `patchProduct()` : PATCH 메소드를 사용해 주세요.
 export async function patchProduct(id, product) {
   try {
-    const response = await axios.patch(`${BASE_URL}/${productId}`, product);
+    const response = await axios.patch(`${BASE_URL}/${id}`, product);
     if (response.status !== 200) {
       throw new Error("response failed", { cause: response });
     }
