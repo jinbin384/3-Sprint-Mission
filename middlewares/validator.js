@@ -1,4 +1,4 @@
-import { ValidationError } from "./CustomError.js";
+import { ValidationError } from "../middlewares/CustomError.js";
 
 export const validateProductInfo = (req, res, next) => {
   const { name, price, tags } = req.body;

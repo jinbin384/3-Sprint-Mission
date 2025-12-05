@@ -1,4 +1,4 @@
-import { CustomError } from "./CustomError.js";
+import { CustomError } from "../middlewares/CustomError.js";
 
 const errorHandler = (err, req, res, next) => {
   console.error("[Error Log]", err);
