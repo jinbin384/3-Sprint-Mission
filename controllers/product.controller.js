@@ -1,5 +1,5 @@
 import * as productService from "../services/product.service.js";
-import { NotFoundError } from "../utils/CustomError.js";
+import { NotFoundError } from "../middlewares/CustomError.js";
 
 const asyncHandler = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
