@@ -18,12 +18,12 @@ router
   .patch(validateProductInfo, productController.updateProduct)
   .delete(productController.deleteProduct);
 
-// 댓글 관련
+// 댓글 관련 라우트 (여기서 에러가 났었습니다)
 router.post(
   "/:id/comments",
   validateComment,
   commentController.createProductComment
 );
-router.get("/:id/comments", commentController.getProductComments); // [추가] 목록 조회
+router.get("/:id/comments", commentController.getProductComments);
 
 export default router;
